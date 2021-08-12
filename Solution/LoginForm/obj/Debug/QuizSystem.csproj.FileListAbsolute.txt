@@ -1,0 +1,11 @@
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\bin\Debug\LoginForm.exe.config
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\bin\Debug\LoginForm.exe
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\bin\Debug\LoginForm.pdb
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\QuizSystem.csproj.AssemblyReference.cache
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.LoginForm.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.RegistrationForm.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\QuizSystem.csproj.GenerateResource.cache
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\QuizSystem.csproj.CoreCompileInputs.cache
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.exe
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.pdb
