@@ -9,3 +9,6 @@ C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\QuizSystem
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\QuizSystem.csproj.CoreCompileInputs.cache
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.pdb
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.AdminPanel.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.StudentPanel.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.TeacherPanel.resources
