@@ -13,6 +13,7 @@ namespace LoginForm
 {
     public partial class LoginForm : Form
     {
+        public static string passingText;
         public LoginForm()
         {
             InitializeComponent();
@@ -38,21 +39,24 @@ namespace LoginForm
                     if (dt.Rows[i]["UserType"].ToString() == cmbItemValue)
                     {
 
-                        MessageBox.Show("You are login as " + dt.Rows[i][3]);
+                        MessageBox.Show("You are login as " + dt.Rows[i][1]);
                         if (comboBoxType.SelectedIndex == 0)
                         {
+                            passingText = textBox1.Text;
                             AdminPanel f = new AdminPanel();
                             f.Show();
                             this.Hide();
                         }
                         else if (comboBoxType.SelectedIndex == 1)
                         {
+                            passingText = textBox1.Text;
                             TeacherPanel fr = new TeacherPanel();
                             this.Hide();
                             fr.Show();
                         }
                         else
                         {
+                            passingText = textBox1.Text;
                             StudentPanel fr = new StudentPanel();
                             this.Hide();
                             fr.Show();

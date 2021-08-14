@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
+using System.Data.SqlClient;
 
 
 namespace LoginForm
@@ -50,7 +50,7 @@ namespace LoginForm
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    MessageBox.Show("Inserted");
+                    MessageBox.Show("Inserted", "Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 con.Close();
@@ -107,8 +107,9 @@ namespace LoginForm
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
+
+
 
             add(txtName.Text, txtSurname.Text, txtReceiver.Text, password.ToString(), comboBoxType.SelectedItem.ToString());
 
