@@ -12,3 +12,4 @@ C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.AdminPanel.resources
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.StudentPanel.resources
 C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.TeacherPanel.resources
+C:\Users\Flauz\Desktop\CSharp\QuizSistem\Solution\LoginForm\obj\Debug\LoginForm.AddTestForm.resources

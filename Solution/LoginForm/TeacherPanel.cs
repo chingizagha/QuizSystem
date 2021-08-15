@@ -27,6 +27,7 @@ namespace LoginForm
         }
         private void TeacherPanel_Load(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = GetDataList();
 
             textBox3.Text = LoginForm.passingText;
             string sql = "select * from [User] where Email ='" + textBox3.Text + "' ";
@@ -57,7 +58,7 @@ namespace LoginForm
             {
                 MessageBox.Show(ex.Message);
             }
-            labelTeacherName.Text = "Welcome, " + textBox1.Text;
+            labelTeacherName.Text = textBox1.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,5 +84,166 @@ namespace LoginForm
             LoginForm ff = new LoginForm();
             ff.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddTestForm ff = new AddTestForm();
+            this.Hide();
+            ff.Show();
+        }
+
+
+        public void hidePanels()
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+        }
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panel2.Visible = true;
+        }
+        private void btnAddQuiz_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panel3.Visible = true;
+        }
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panel4.Visible = true;
+        }
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm ff = new LoginForm();
+            ff.Show();
+        }
+
+
+        private void add1(string title,string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer)
+        {
+            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer) VALUES(@TITLE,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER)";
+            cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@TITLE", title);
+            cmd.Parameters.AddWithValue("@QUESTIONNAME", questionName);
+            cmd.Parameters.AddWithValue("@A", optionA);
+            cmd.Parameters.AddWithValue("@B", optionB);
+            cmd.Parameters.AddWithValue("@C", optionC);
+            cmd.Parameters.AddWithValue("@D", optionD);
+            cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
+
+            try
+            {
+                con.Open();
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Inserted");
+
+                    txtQuestion.Text = "";
+                    txtA.Text = "";
+                    txtB.Text = "";
+                    txtC.Text = "";
+                    txtD.Text = "";
+                }
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+
+        private void add2(string title, string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer)
+        {
+            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer) VALUES(@Title,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER)";
+            cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@TITLE", title);
+            cmd.Parameters.AddWithValue("@QUESTIONNAME", questionName);
+            cmd.Parameters.AddWithValue("@A", optionA);
+            cmd.Parameters.AddWithValue("@B", optionB);
+            cmd.Parameters.AddWithValue("@C", optionC);
+            cmd.Parameters.AddWithValue("@D", optionD);
+            cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
+
+            try
+            {
+                con.Open();
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Inserted");
+
+                    txtTitle.Text = "";
+                    txtQuestion.Text = "";
+                    txtA.Text = "";
+                    txtB.Text = "";
+                    txtC.Text = "";
+                    txtD.Text = "";
+                }
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            string answer="";
+            foreach (CheckBox item in groupBoxAnswer.Controls)
+            {
+                if (item.Checked)
+                {
+                    answer += item.Text + " ";
+                }
+            }
+            add1(txtTitle.Text,txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            string answer = "";
+            foreach (CheckBox item in groupBoxAnswer.Controls)
+            {
+                if (item.Checked)
+                {
+                    answer += item.Text + " ";
+                }
+            }
+            add2(txtTitle.Text, txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
+        }
+
+        private DataTable GetDataList() 
+        {
+            DataTable dtQuiz = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using(SqlCommand cmd = new SqlCommand("SELECT [Title],Count(Question) as 'Number of questions' FROM [Quiz] GROUP BY Title", con))
+                {
+                    con.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    dtQuiz.Load(reader);
+                }
+            }
+            return dtQuiz;
+        }
+
+        
+
+
     }
 }

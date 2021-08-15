@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTestForm.Designer.cs">
+      <DependentUpon>AddTestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="TeacherPanel.Designer.cs">
       <DependentUpon>TeacherPanel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddTestForm.resx">
+      <DependentUpon>AddTestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
