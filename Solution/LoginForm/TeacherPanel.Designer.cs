@@ -47,27 +47,27 @@ namespace LoginForm
             this.btnAddQuiz = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtQuestion = new System.Windows.Forms.TextBox();
-            this.txtA = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtB = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtC = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnFinish = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.groupBoxAnswer = new System.Windows.Forms.GroupBox();
             this.txtD = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBoxAnswer = new System.Windows.Forms.GroupBox();
-            this.checkBoxA = new System.Windows.Forms.CheckBox();
-            this.checkBoxB = new System.Windows.Forms.CheckBox();
-            this.checkBoxC = new System.Windows.Forms.CheckBox();
-            this.checkBoxD = new System.Windows.Forms.CheckBox();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnFinish = new System.Windows.Forms.Button();
+            this.txtC = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtB = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtA = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtQuestion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rBtnA = new System.Windows.Forms.RadioButton();
+            this.rBtnB = new System.Windows.Forms.RadioButton();
+            this.rBtnC = new System.Windows.Forms.RadioButton();
+            this.rBtnD = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -276,95 +276,43 @@ namespace LoginForm
             this.panel3.Size = new System.Drawing.Size(739, 495);
             this.panel3.TabIndex = 14;
             // 
-            // label5
+            // btnFinish
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 24);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Title";
+            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFinish.Location = new System.Drawing.Point(591, 431);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(100, 44);
+            this.btnFinish.TabIndex = 14;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // txtTitle
+            // btnNext
             // 
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.Location = new System.Drawing.Point(46, 52);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(269, 29);
-            this.txtTitle.TabIndex = 1;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNext.Location = new System.Drawing.Point(426, 431);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(104, 44);
+            this.btnNext.TabIndex = 13;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // label6
+            // groupBoxAnswer
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 113);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Question:";
-            // 
-            // txtQuestion
-            // 
-            this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(47, 150);
-            this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(268, 26);
-            this.txtQuestion.TabIndex = 3;
-            // 
-            // txtA
-            // 
-            this.txtA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(47, 228);
-            this.txtA.Name = "txtA";
-            this.txtA.Size = new System.Drawing.Size(268, 26);
-            this.txtA.TabIndex = 5;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(43, 191);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 20);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Option 1:";
-            // 
-            // txtB
-            // 
-            this.txtB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtB.Location = new System.Drawing.Point(47, 306);
-            this.txtB.Name = "txtB";
-            this.txtB.Size = new System.Drawing.Size(268, 26);
-            this.txtB.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 269);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 20);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Option 2:";
-            // 
-            // txtC
-            // 
-            this.txtC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(47, 380);
-            this.txtC.Name = "txtC";
-            this.txtC.Size = new System.Drawing.Size(268, 26);
-            this.txtC.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(43, 343);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Option 3:";
+            this.groupBoxAnswer.Controls.Add(this.rBtnD);
+            this.groupBoxAnswer.Controls.Add(this.rBtnC);
+            this.groupBoxAnswer.Controls.Add(this.rBtnB);
+            this.groupBoxAnswer.Controls.Add(this.rBtnA);
+            this.groupBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAnswer.Location = new System.Drawing.Point(426, 228);
+            this.groupBoxAnswer.Name = "groupBoxAnswer";
+            this.groupBoxAnswer.Size = new System.Drawing.Size(265, 119);
+            this.groupBoxAnswer.TabIndex = 12;
+            this.groupBoxAnswer.TabStop = false;
+            this.groupBoxAnswer.Text = "Answer";
             // 
             // txtD
             // 
@@ -384,83 +332,95 @@ namespace LoginForm
             this.label10.TabIndex = 10;
             this.label10.Text = "Option 4:";
             // 
-            // groupBoxAnswer
+            // txtC
             // 
-            this.groupBoxAnswer.Controls.Add(this.checkBoxD);
-            this.groupBoxAnswer.Controls.Add(this.checkBoxC);
-            this.groupBoxAnswer.Controls.Add(this.checkBoxB);
-            this.groupBoxAnswer.Controls.Add(this.checkBoxA);
-            this.groupBoxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAnswer.Location = new System.Drawing.Point(426, 228);
-            this.groupBoxAnswer.Name = "groupBoxAnswer";
-            this.groupBoxAnswer.Size = new System.Drawing.Size(265, 119);
-            this.groupBoxAnswer.TabIndex = 12;
-            this.groupBoxAnswer.TabStop = false;
-            this.groupBoxAnswer.Text = "Answer";
+            this.txtC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtC.Location = new System.Drawing.Point(47, 380);
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(268, 26);
+            this.txtC.TabIndex = 9;
             // 
-            // checkBoxA
+            // label9
             // 
-            this.checkBoxA.AutoSize = true;
-            this.checkBoxA.Location = new System.Drawing.Point(6, 29);
-            this.checkBoxA.Name = "checkBoxA";
-            this.checkBoxA.Size = new System.Drawing.Size(88, 24);
-            this.checkBoxA.TabIndex = 13;
-            this.checkBoxA.Text = "Option 1";
-            this.checkBoxA.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(43, 343);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 20);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Option 3:";
             // 
-            // checkBoxB
+            // txtB
             // 
-            this.checkBoxB.AutoSize = true;
-            this.checkBoxB.Location = new System.Drawing.Point(6, 76);
-            this.checkBoxB.Name = "checkBoxB";
-            this.checkBoxB.Size = new System.Drawing.Size(88, 24);
-            this.checkBoxB.TabIndex = 14;
-            this.checkBoxB.Text = "Option 2";
-            this.checkBoxB.UseVisualStyleBackColor = true;
+            this.txtB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB.Location = new System.Drawing.Point(47, 306);
+            this.txtB.Name = "txtB";
+            this.txtB.Size = new System.Drawing.Size(268, 26);
+            this.txtB.TabIndex = 7;
             // 
-            // checkBoxC
+            // label8
             // 
-            this.checkBoxC.AutoSize = true;
-            this.checkBoxC.Location = new System.Drawing.Point(165, 29);
-            this.checkBoxC.Name = "checkBoxC";
-            this.checkBoxC.Size = new System.Drawing.Size(88, 24);
-            this.checkBoxC.TabIndex = 15;
-            this.checkBoxC.Text = "Option 3";
-            this.checkBoxC.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(43, 269);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Option 2:";
             // 
-            // checkBoxD
+            // txtA
             // 
-            this.checkBoxD.AutoSize = true;
-            this.checkBoxD.Location = new System.Drawing.Point(165, 76);
-            this.checkBoxD.Name = "checkBoxD";
-            this.checkBoxD.Size = new System.Drawing.Size(88, 24);
-            this.checkBoxD.TabIndex = 16;
-            this.checkBoxD.Text = "Option 4";
-            this.checkBoxD.UseVisualStyleBackColor = true;
+            this.txtA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtA.Location = new System.Drawing.Point(47, 228);
+            this.txtA.Name = "txtA";
+            this.txtA.Size = new System.Drawing.Size(268, 26);
+            this.txtA.TabIndex = 5;
             // 
-            // btnNext
+            // label7
             // 
-            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(426, 431);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(104, 44);
-            this.btnNext.TabIndex = 13;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(43, 191);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 20);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Option 1:";
             // 
-            // btnFinish
+            // txtQuestion
             // 
-            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFinish.Location = new System.Drawing.Point(591, 431);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(100, 44);
-            this.btnFinish.TabIndex = 14;
-            this.btnFinish.Text = "Finish";
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuestion.Location = new System.Drawing.Point(47, 150);
+            this.txtQuestion.Name = "txtQuestion";
+            this.txtQuestion.Size = new System.Drawing.Size(268, 26);
+            this.txtQuestion.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(43, 113);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Question:";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(46, 52);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(269, 29);
+            this.txtTitle.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(43, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Title";
             // 
             // panel4
             // 
@@ -483,6 +443,50 @@ namespace LoginForm
             this.dataGridView1.Size = new System.Drawing.Size(662, 295);
             this.dataGridView1.TabIndex = 0;
             // 
+            // rBtnA
+            // 
+            this.rBtnA.AutoSize = true;
+            this.rBtnA.Location = new System.Drawing.Point(6, 37);
+            this.rBtnA.Name = "rBtnA";
+            this.rBtnA.Size = new System.Drawing.Size(119, 24);
+            this.rBtnA.TabIndex = 0;
+            this.rBtnA.TabStop = true;
+            this.rBtnA.Text = "radioButton1";
+            this.rBtnA.UseVisualStyleBackColor = true;
+            // 
+            // rBtnB
+            // 
+            this.rBtnB.AutoSize = true;
+            this.rBtnB.Location = new System.Drawing.Point(6, 80);
+            this.rBtnB.Name = "rBtnB";
+            this.rBtnB.Size = new System.Drawing.Size(119, 24);
+            this.rBtnB.TabIndex = 1;
+            this.rBtnB.TabStop = true;
+            this.rBtnB.Text = "radioButton2";
+            this.rBtnB.UseVisualStyleBackColor = true;
+            // 
+            // rBtnC
+            // 
+            this.rBtnC.AutoSize = true;
+            this.rBtnC.Location = new System.Drawing.Point(140, 37);
+            this.rBtnC.Name = "rBtnC";
+            this.rBtnC.Size = new System.Drawing.Size(119, 24);
+            this.rBtnC.TabIndex = 2;
+            this.rBtnC.TabStop = true;
+            this.rBtnC.Text = "radioButton3";
+            this.rBtnC.UseVisualStyleBackColor = true;
+            // 
+            // rBtnD
+            // 
+            this.rBtnD.AutoSize = true;
+            this.rBtnD.Location = new System.Drawing.Point(140, 79);
+            this.rBtnD.Name = "rBtnD";
+            this.rBtnD.Size = new System.Drawing.Size(119, 24);
+            this.rBtnD.TabIndex = 3;
+            this.rBtnD.TabStop = true;
+            this.rBtnD.Text = "radioButton4";
+            this.rBtnD.UseVisualStyleBackColor = true;
+            // 
             // TeacherPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +497,7 @@ namespace LoginForm
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "TeacherPanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeacherPanel";
             this.Load += new System.EventHandler(this.TeacherPanel_Load);
             this.panel1.ResumeLayout(false);
@@ -534,10 +539,6 @@ namespace LoginForm
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.GroupBox groupBoxAnswer;
-        private System.Windows.Forms.CheckBox checkBoxD;
-        private System.Windows.Forms.CheckBox checkBoxC;
-        private System.Windows.Forms.CheckBox checkBoxB;
-        private System.Windows.Forms.CheckBox checkBoxA;
         private System.Windows.Forms.TextBox txtD;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtC;
@@ -550,5 +551,9 @@ namespace LoginForm
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RadioButton rBtnD;
+        private System.Windows.Forms.RadioButton rBtnC;
+        private System.Windows.Forms.RadioButton rBtnB;
+        private System.Windows.Forms.RadioButton rBtnA;
     }
 }

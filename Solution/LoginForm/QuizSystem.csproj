@@ -84,6 +84,12 @@
     <Compile Include="TeacherPanel.Designer.cs">
       <DependentUpon>TeacherPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkForm.Designer.cs">
+      <DependentUpon>WorkForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddTestForm.resx">
       <DependentUpon>AddTestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherPanel.resx">
       <DependentUpon>TeacherPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorkForm.resx">
+      <DependentUpon>WorkForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

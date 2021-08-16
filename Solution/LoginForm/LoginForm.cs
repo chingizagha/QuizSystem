@@ -69,5 +69,10 @@ namespace LoginForm
                 MessageBox.Show("You entered invalid email or password");
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

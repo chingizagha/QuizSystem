@@ -13,6 +13,8 @@ namespace LoginForm
 {
     public partial class StudentPanel : Form
     {
+        public static string passingCmbText;
+
         static string conString = @"Data Source=DESKTOP-82S0U2V;Initial Catalog=QuizSistem;User ID=sa;Password=murad123";
         SqlConnection con = new SqlConnection(conString);
         SqlCommand cmd;
@@ -55,7 +57,25 @@ namespace LoginForm
             {
                 MessageBox.Show(ex.Message);
             }
-            labelStudentName.Text = "Welcome, " + textBox1.Text;
+            labelStudentName.Text = textBox1.Text;
+
+
+            
+
+            string Sql = "SELECT [Title] FROM [Quiz] GROUP BY [Title]";
+            SqlConnection conn = new SqlConnection(conString);
+            conn.Open();
+            SqlCommand cmd1 = new SqlCommand(Sql, conn);
+            SqlDataReader DR = cmd1.ExecuteReader();
+            
+
+            while (DR.Read())
+            {
+                cmbQuizTitle.Items.Add(DR[0]);
+
+            }
+            conn.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +97,49 @@ namespace LoginForm
             this.Close();
             LoginForm ff = new LoginForm();
             ff.Show();
+        }
+
+        public void hidePanels()
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            //panel4.Visible = false;
+        }
+
+        private void btnPersonal_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panel2.Visible = true;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            LoginForm ff = new LoginForm();
+            this.Close();
+            ff.Show();
+        }
+
+        private void btnSelectQuiz_Click(object sender, EventArgs e)
+        {
+            hidePanels();
+            panel3.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            passingCmbText = cmbQuizTitle.SelectedItem.ToString();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to start?", "Warning", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                WorkForm ff = new WorkForm();
+                this.Hide();
+                ff.Show();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+            }
+
+            
         }
     }
 }

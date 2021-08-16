@@ -11,9 +11,6 @@ using System.Data.SqlClient;
 
 namespace LoginForm
 {
-
-
-
     public partial class TeacherPanel : Form
     {
         static string conString = @"Data Source=DESKTOP-82S0U2V;Initial Catalog=QuizSistem;User ID=sa;Password=murad123";
@@ -113,6 +110,7 @@ namespace LoginForm
         {
             hidePanels();
             panel4.Visible = true;
+            dataGridView1.DataSource = GetDataList();
         }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
@@ -201,7 +199,7 @@ namespace LoginForm
         private void btnNext_Click(object sender, EventArgs e)
         {
             string answer="";
-            foreach (CheckBox item in groupBoxAnswer.Controls)
+            foreach (RadioButton item in groupBoxAnswer.Controls)
             {
                 if (item.Checked)
                 {
@@ -214,11 +212,26 @@ namespace LoginForm
         private void btnFinish_Click(object sender, EventArgs e)
         {
             string answer = "";
-            foreach (CheckBox item in groupBoxAnswer.Controls)
+            foreach (RadioButton item in groupBoxAnswer.Controls)
             {
                 if (item.Checked)
                 {
-                    answer += item.Text + " ";
+                    if(item.Text == "radioButton1")
+                    {
+                        answer += txtA.Text;
+                    }
+                    else if (item.Text == "radioButton2")
+                    {
+                        answer += txtB.Text;
+                    }
+                    else if (item.Text == "radioButton3")
+                    {
+                        answer += txtC.Text;
+                    }
+                    else if (item.Text == "radioButton4")
+                    {
+                        answer += txtD.Text;
+                    }
                 }
             }
             add2(txtTitle.Text, txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
@@ -241,9 +254,5 @@ namespace LoginForm
             }
             return dtQuiz;
         }
-
-        
-
-
     }
 }
