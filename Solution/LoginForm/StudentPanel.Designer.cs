@@ -47,12 +47,16 @@ namespace LoginForm
             this.btnSelectQuiz = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbQuizTitle = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.cmbQuizTitle = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox5
@@ -195,6 +199,7 @@ namespace LoginForm
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "Show Test Result";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // btnPersonal
             // 
@@ -237,6 +242,7 @@ namespace LoginForm
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.cmbQuizTitle);
             this.panel3.Controls.Add(this.label5);
@@ -244,26 +250,6 @@ namespace LoginForm
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(720, 480);
             this.panel3.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(265, 38);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Choose the test:";
-            // 
-            // cmbQuizTitle
-            // 
-            this.cmbQuizTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbQuizTitle.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbQuizTitle.FormattingEnabled = true;
-            this.cmbQuizTitle.Location = new System.Drawing.Point(52, 97);
-            this.cmbQuizTitle.Name = "cmbQuizTitle";
-            this.cmbQuizTitle.Size = new System.Drawing.Size(514, 41);
-            this.cmbQuizTitle.TabIndex = 1;
             // 
             // button2
             // 
@@ -275,6 +261,47 @@ namespace LoginForm
             this.button2.Text = "Start";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cmbQuizTitle
+            // 
+            this.cmbQuizTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbQuizTitle.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbQuizTitle.FormattingEnabled = true;
+            this.cmbQuizTitle.Location = new System.Drawing.Point(52, 97);
+            this.cmbQuizTitle.Name = "cmbQuizTitle";
+            this.cmbQuizTitle.Size = new System.Drawing.Size(514, 41);
+            this.cmbQuizTitle.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(265, 38);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Choose the test:";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Location = new System.Drawing.Point(0, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(705, 451);
+            this.panel4.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(663, 255);
+            this.dataGridView1.TabIndex = 0;
             // 
             // StudentPanel
             // 
@@ -294,6 +321,8 @@ namespace LoginForm
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,5 +350,7 @@ namespace LoginForm
         private System.Windows.Forms.ComboBox cmbQuizTitle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

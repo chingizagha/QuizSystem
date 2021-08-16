@@ -126,11 +126,41 @@ namespace LoginForm
             con.Close();
         }
 
+        private void add(string email, int correctAnswer, int wrongAnswer, string title)
+        {
+            String sql = "INSERT INTO [QuizAnswer](Email,CorrectAnswer,WrongAnswer,Title) VALUES(@EMAIL,@CORRECTANSWER,@WRONGANSWER,@TITLE)";
+            cmd = new SqlCommand(sql, con);
+
+            cmd.Parameters.AddWithValue("@EMAIL", email);
+            cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
+            cmd.Parameters.AddWithValue("@WRONGANSWER", wrongAnswer);
+            cmd.Parameters.AddWithValue("@TITLE", title);
+            try
+            {
+                con.Open();
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Inserted", "Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
+
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            add(LoginForm.passingText, correctAns, count - correctAns, StudentPanel.passingCmbText); 
             StudentPanel ff = new StudentPanel();
             this.Close();
             ff.Show();
+
         }
     }
 }

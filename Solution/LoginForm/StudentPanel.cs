@@ -27,7 +27,7 @@ namespace LoginForm
 
         private void StudentPanel_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = GetDataList();
             textBox3.Text = LoginForm.passingText;
             string sql = "select * from [User] where Email ='" + textBox3.Text + "' ";
             SqlCommand cmd = new SqlCommand(sql, con);
@@ -103,7 +103,7 @@ namespace LoginForm
         {
             panel2.Visible = false;
             panel3.Visible = false;
-            //panel4.Visible = false;
+            panel4.Visible = false;
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
@@ -138,8 +138,31 @@ namespace LoginForm
             else if (dialogResult == DialogResult.No)
             {
             }
+        }
 
-            
+        private DataTable GetDataList()
+        {
+            DataTable dtQuiz = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT Title,CorrectAnswer,WrongAnswer FROM [QuizAnswer] Where EMAIL = '"+ LoginForm.passingText +"' ", con))
+                {
+                    con.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    dtQuiz.Load(reader);
+                }
+            }
+            return dtQuiz;
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = GetDataList();
+            hidePanels();
+            panel4.Visible = true;
         }
     }
 }
