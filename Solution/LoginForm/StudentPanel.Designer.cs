@@ -47,11 +47,11 @@ namespace LoginForm
             this.btnSelectQuiz = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.cmbQuizTitle = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -171,7 +171,7 @@ namespace LoginForm
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(0, 279);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 373);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(189, 33);
             this.btnLogOut.TabIndex = 3;
@@ -193,7 +193,7 @@ namespace LoginForm
             // btnShow
             // 
             this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(0, 240);
+            this.btnShow.Location = new System.Drawing.Point(0, 226);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(189, 33);
             this.btnShow.TabIndex = 2;
@@ -204,7 +204,7 @@ namespace LoginForm
             // btnPersonal
             // 
             this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonal.Location = new System.Drawing.Point(0, 164);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 127);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Size = new System.Drawing.Size(189, 33);
             this.btnPersonal.TabIndex = 1;
@@ -215,7 +215,7 @@ namespace LoginForm
             // btnSelectQuiz
             // 
             this.btnSelectQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectQuiz.Location = new System.Drawing.Point(0, 203);
+            this.btnSelectQuiz.Location = new System.Drawing.Point(0, 173);
             this.btnSelectQuiz.Name = "btnSelectQuiz";
             this.btnSelectQuiz.Size = new System.Drawing.Size(189, 33);
             this.btnSelectQuiz.TabIndex = 0;
@@ -251,6 +251,27 @@ namespace LoginForm
             this.panel3.Size = new System.Drawing.Size(720, 480);
             this.panel3.TabIndex = 23;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Location = new System.Drawing.Point(0, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(705, 451);
+            this.panel4.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 21);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(663, 255);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,27 +302,6 @@ namespace LoginForm
             this.label5.Size = new System.Drawing.Size(265, 38);
             this.label5.TabIndex = 0;
             this.label5.Text = "Choose the test:";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Location = new System.Drawing.Point(0, 12);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(705, 451);
-            this.panel4.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(663, 255);
-            this.dataGridView1.TabIndex = 0;
             // 
             // StudentPanel
             // 

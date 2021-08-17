@@ -50,6 +50,10 @@ namespace LoginForm
             this.btnFinish = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.groupBoxAnswer = new System.Windows.Forms.GroupBox();
+            this.rBtnD = new System.Windows.Forms.RadioButton();
+            this.rBtnC = new System.Windows.Forms.RadioButton();
+            this.rBtnB = new System.Windows.Forms.RadioButton();
+            this.rBtnA = new System.Windows.Forms.RadioButton();
             this.txtD = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtC = new System.Windows.Forms.TextBox();
@@ -64,10 +68,6 @@ namespace LoginForm
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.rBtnA = new System.Windows.Forms.RadioButton();
-            this.rBtnB = new System.Windows.Forms.RadioButton();
-            this.rBtnC = new System.Windows.Forms.RadioButton();
-            this.rBtnD = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -196,7 +196,7 @@ namespace LoginForm
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(0, 279);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 377);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(189, 33);
             this.btnLogOut.TabIndex = 3;
@@ -218,7 +218,7 @@ namespace LoginForm
             // btnPersonal
             // 
             this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonal.Location = new System.Drawing.Point(0, 164);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 137);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Size = new System.Drawing.Size(189, 33);
             this.btnPersonal.TabIndex = 1;
@@ -229,7 +229,7 @@ namespace LoginForm
             // btnAddQuiz
             // 
             this.btnAddQuiz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddQuiz.Location = new System.Drawing.Point(0, 203);
+            this.btnAddQuiz.Location = new System.Drawing.Point(0, 190);
             this.btnAddQuiz.Name = "btnAddQuiz";
             this.btnAddQuiz.Size = new System.Drawing.Size(189, 33);
             this.btnAddQuiz.TabIndex = 0;
@@ -313,6 +313,50 @@ namespace LoginForm
             this.groupBoxAnswer.TabIndex = 12;
             this.groupBoxAnswer.TabStop = false;
             this.groupBoxAnswer.Text = "Answer";
+            // 
+            // rBtnD
+            // 
+            this.rBtnD.AutoSize = true;
+            this.rBtnD.Location = new System.Drawing.Point(140, 79);
+            this.rBtnD.Name = "rBtnD";
+            this.rBtnD.Size = new System.Drawing.Size(119, 24);
+            this.rBtnD.TabIndex = 3;
+            this.rBtnD.TabStop = true;
+            this.rBtnD.Text = "radioButton4";
+            this.rBtnD.UseVisualStyleBackColor = true;
+            // 
+            // rBtnC
+            // 
+            this.rBtnC.AutoSize = true;
+            this.rBtnC.Location = new System.Drawing.Point(140, 37);
+            this.rBtnC.Name = "rBtnC";
+            this.rBtnC.Size = new System.Drawing.Size(119, 24);
+            this.rBtnC.TabIndex = 2;
+            this.rBtnC.TabStop = true;
+            this.rBtnC.Text = "radioButton3";
+            this.rBtnC.UseVisualStyleBackColor = true;
+            // 
+            // rBtnB
+            // 
+            this.rBtnB.AutoSize = true;
+            this.rBtnB.Location = new System.Drawing.Point(6, 80);
+            this.rBtnB.Name = "rBtnB";
+            this.rBtnB.Size = new System.Drawing.Size(119, 24);
+            this.rBtnB.TabIndex = 1;
+            this.rBtnB.TabStop = true;
+            this.rBtnB.Text = "radioButton2";
+            this.rBtnB.UseVisualStyleBackColor = true;
+            // 
+            // rBtnA
+            // 
+            this.rBtnA.AutoSize = true;
+            this.rBtnA.Location = new System.Drawing.Point(6, 37);
+            this.rBtnA.Name = "rBtnA";
+            this.rBtnA.Size = new System.Drawing.Size(119, 24);
+            this.rBtnA.TabIndex = 0;
+            this.rBtnA.TabStop = true;
+            this.rBtnA.Text = "radioButton1";
+            this.rBtnA.UseVisualStyleBackColor = true;
             // 
             // txtD
             // 
@@ -442,50 +486,6 @@ namespace LoginForm
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(662, 295);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // rBtnA
-            // 
-            this.rBtnA.AutoSize = true;
-            this.rBtnA.Location = new System.Drawing.Point(6, 37);
-            this.rBtnA.Name = "rBtnA";
-            this.rBtnA.Size = new System.Drawing.Size(119, 24);
-            this.rBtnA.TabIndex = 0;
-            this.rBtnA.TabStop = true;
-            this.rBtnA.Text = "radioButton1";
-            this.rBtnA.UseVisualStyleBackColor = true;
-            // 
-            // rBtnB
-            // 
-            this.rBtnB.AutoSize = true;
-            this.rBtnB.Location = new System.Drawing.Point(6, 80);
-            this.rBtnB.Name = "rBtnB";
-            this.rBtnB.Size = new System.Drawing.Size(119, 24);
-            this.rBtnB.TabIndex = 1;
-            this.rBtnB.TabStop = true;
-            this.rBtnB.Text = "radioButton2";
-            this.rBtnB.UseVisualStyleBackColor = true;
-            // 
-            // rBtnC
-            // 
-            this.rBtnC.AutoSize = true;
-            this.rBtnC.Location = new System.Drawing.Point(140, 37);
-            this.rBtnC.Name = "rBtnC";
-            this.rBtnC.Size = new System.Drawing.Size(119, 24);
-            this.rBtnC.TabIndex = 2;
-            this.rBtnC.TabStop = true;
-            this.rBtnC.Text = "radioButton3";
-            this.rBtnC.UseVisualStyleBackColor = true;
-            // 
-            // rBtnD
-            // 
-            this.rBtnD.AutoSize = true;
-            this.rBtnD.Location = new System.Drawing.Point(140, 79);
-            this.rBtnD.Name = "rBtnD";
-            this.rBtnD.Size = new System.Drawing.Size(119, 24);
-            this.rBtnD.TabIndex = 3;
-            this.rBtnD.TabStop = true;
-            this.rBtnD.Text = "radioButton4";
-            this.rBtnD.UseVisualStyleBackColor = true;
             // 
             // TeacherPanel
             // 
