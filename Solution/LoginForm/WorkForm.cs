@@ -133,6 +133,7 @@ namespace LoginForm
 
         private void add(string email, int correctAnswer, int wrongAnswer, string title)
         {
+            
             String sql = "INSERT INTO [QuizAnswer](Email,CorrectAnswer,WrongAnswer,Title) VALUES(@EMAIL,@CORRECTANSWER,@WRONGANSWER,@TITLE)";
             cmd = new SqlCommand(sql, con);
 
@@ -140,6 +141,7 @@ namespace LoginForm
             cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
             cmd.Parameters.AddWithValue("@WRONGANSWER", wrongAnswer);
             cmd.Parameters.AddWithValue("@TITLE", title);
+
             try
             {
                 con.Open();

@@ -13,6 +13,7 @@ namespace LoginForm
 {
     public partial class TeacherPanel : Form
     {
+        string getDataListEmail = LoginForm.passingText;
         static string conString = @"Data Source=DESKTOP-82S0U2V;Initial Catalog=QuizSistem;User ID=sa;Password=murad123";
         SqlConnection con = new SqlConnection(conString);
         SqlCommand cmd;
@@ -120,9 +121,9 @@ namespace LoginForm
         }
 
 
-        private void add1(string title,string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer)
+        private void add1(string title,string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer,string email)
         {
-            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer) VALUES(@TITLE,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER)";
+            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer,Email) VALUES(@TITLE,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER,@EMAIL)";
             cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@TITLE", title);
@@ -132,6 +133,7 @@ namespace LoginForm
             cmd.Parameters.AddWithValue("@C", optionC);
             cmd.Parameters.AddWithValue("@D", optionD);
             cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
+            cmd.Parameters.AddWithValue("@EMAIL", email);
 
             try
             {
@@ -158,9 +160,9 @@ namespace LoginForm
             }
         }
 
-        private void add2(string title, string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer)
+        private void add2(string title, string questionName, string optionA, string optionB, string optionC, string optionD, string correctAnswer, string email)
         {
-            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer) VALUES(@Title,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER)";
+            String sql = "INSERT INTO [Quiz](Title,Question,A,B,C,D,CorrectAnswer,Email) VALUES(@Title,@QUESTIONNAME,@A,@B,@C,@D,@CORRECTANSWER,@EMAIL)";
             cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.AddWithValue("@TITLE", title);
@@ -170,6 +172,7 @@ namespace LoginForm
             cmd.Parameters.AddWithValue("@C", optionC);
             cmd.Parameters.AddWithValue("@D", optionD);
             cmd.Parameters.AddWithValue("@CORRECTANSWER", correctAnswer);
+            cmd.Parameters.AddWithValue("@EMAIL", email);
 
             try
             {
@@ -221,7 +224,7 @@ namespace LoginForm
                     }
                 }
             }
-            add1(txtTitle.Text,txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
+            add1(txtTitle.Text,txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer, textBox3.Text);
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
@@ -249,7 +252,7 @@ namespace LoginForm
                     }
                 }
             }
-            add2(txtTitle.Text, txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
+            add2(txtTitle.Text, txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer, textBox3.Text);
         }
 
         private DataTable GetDataList() 
@@ -258,7 +261,7 @@ namespace LoginForm
 
             using (SqlConnection con = new SqlConnection(conString))
             {
-                using(SqlCommand cmd = new SqlCommand("SELECT [Title],Count(Question) as 'Number of questions',(SELECT Count(Title) FROM QuizAnswer WHERE Quiz.Title=QuizAnswer.Title ) as 'Number of operations' FROM [Quiz] GROUP BY Title", con))
+                using(SqlCommand cmd = new SqlCommand("SELECT [Title],Count(Question) as 'Number of questions',(SELECT Count(Title) FROM QuizAnswer WHERE Quiz.Title=QuizAnswer.Title ) as 'Number of operations' FROM [Quiz] WHERE Email='"+ getDataListEmail +"' GROUP BY Title", con))
                 {
                     con.Open();
 
