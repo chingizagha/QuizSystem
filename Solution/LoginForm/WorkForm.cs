@@ -15,7 +15,7 @@ namespace LoginForm
     {
         string correct1;
         Int32 count;
-        int i = 1;
+        int i = 0;
         int correctAns = 0;
         int wrongAns = 0;
         static string conString = @"Data Source=DESKTOP-82S0U2V;Initial Catalog=QuizSistem;User ID=sa;Password=murad123";
@@ -29,20 +29,18 @@ namespace LoginForm
         }
         private void WorkForm_Load(object sender, EventArgs e)
         {
-
+            i++;
             getNextQuestion();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            i++;
-            getNextQuestion();
-
             if (radioButton1.Checked)
             {
                 if (radioButton1.Text == correct1)
                 {
                     correctAns++;
+
                 }
             }
             else if (radioButton2.Checked)
@@ -61,11 +59,15 @@ namespace LoginForm
             }
             else if (radioButton4.Checked)
             {
-                if (radioButton1.Text == correct1)
+                if (radioButton4.Text == correct1)
                 {
                     correctAns++;
+                    
                 }
             }
+            i++;
+            getNextQuestion();
+
 
             if (i > count)
             {
@@ -81,12 +83,18 @@ namespace LoginForm
                 lblCorrect.Text = $"Correct Answer: {correctAns}";
                 lblWrong.Text = $"Wrong Answer: {count-correctAns}";
             }
+            
         }
 
         public void getNextQuestion()
         {
-            
+            con.Open();
+            SqlCommand comm = new SqlCommand("SELECT COUNT(Question) FROM [Quiz] WHERE [Title]='" + StudentPanel.passingCmbText + "'", con);
+            count = (Int32)comm.ExecuteScalar();
+            con.Close();
+
             string sql = $"SELECT Top {i} Question,A,B,C,D,CorrectAnswer FROM [Quiz] WHERE [Title]='" + StudentPanel.passingCmbText + "' ";
+            
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader myreader;
 
@@ -111,19 +119,16 @@ namespace LoginForm
                     radioButton3.Text = c;
                     radioButton4.Text = d;
 
-                    
                 }
                 con.Close();
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            con.Open();
-            SqlCommand comm = new SqlCommand("SELECT COUNT(Question) FROM [Quiz] WHERE [Title]='" + StudentPanel.passingCmbText + "'", con);
-            count = (Int32)comm.ExecuteScalar();
-            con.Close();
+           
         }
 
         private void add(string email, int correctAnswer, int wrongAnswer, string title)

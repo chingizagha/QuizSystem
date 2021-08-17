@@ -39,6 +39,7 @@ namespace LoginForm
             this.labelCreate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@ namespace LoginForm
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(94, 373);
+            this.btnLogin.Location = new System.Drawing.Point(94, 408);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(299, 33);
             this.btnLogin.TabIndex = 1;
@@ -106,7 +107,7 @@ namespace LoginForm
             this.labelSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSignUp.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelSignUp.Location = new System.Drawing.Point(90, 434);
+            this.labelSignUp.Location = new System.Drawing.Point(76, 481);
             this.labelSignUp.Name = "labelSignUp";
             this.labelSignUp.Size = new System.Drawing.Size(175, 20);
             this.labelSignUp.TabIndex = 6;
@@ -118,7 +119,7 @@ namespace LoginForm
             this.labelCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCreate.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelCreate.Location = new System.Drawing.Point(90, 493);
+            this.labelCreate.Location = new System.Drawing.Point(290, 481);
             this.labelCreate.Name = "labelCreate";
             this.labelCreate.Size = new System.Drawing.Size(118, 20);
             this.labelCreate.TabIndex = 7;
@@ -129,7 +130,7 @@ namespace LoginForm
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(89, 275);
+            this.label4.Location = new System.Drawing.Point(89, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 25);
             this.label4.TabIndex = 8;
@@ -144,16 +145,29 @@ namespace LoginForm
             "Admin",
             "Teacher",
             "Student"});
-            this.comboBoxType.Location = new System.Drawing.Point(94, 313);
+            this.comboBoxType.Location = new System.Drawing.Point(94, 334);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(299, 33);
             this.comboBoxType.TabIndex = 9;
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(252, 272);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(141, 24);
+            this.checkBoxShowPassword.TabIndex = 10;
+            this.checkBoxShowPassword.Text = "Show Password";
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            this.checkBoxShowPassword.CheckedChanged += new System.EventHandler(this.checkBoxShowPassword_CheckedChanged);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 541);
+            this.Controls.Add(this.checkBoxShowPassword);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelCreate);
@@ -167,7 +181,6 @@ namespace LoginForm
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +198,7 @@ namespace LoginForm
         private System.Windows.Forms.Label labelCreate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxType;
+        private System.Windows.Forms.CheckBox checkBoxShowPassword;
     }
 }
 

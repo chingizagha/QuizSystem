@@ -203,7 +203,22 @@ namespace LoginForm
             {
                 if (item.Checked)
                 {
-                    answer += item.Text + " ";
+                    if (item.Text == "radioButton1")
+                    {
+                        answer += txtA.Text;
+                    }
+                    else if (item.Text == "radioButton2")
+                    {
+                        answer += txtB.Text;
+                    }
+                    else if (item.Text == "radioButton3")
+                    {
+                        answer += txtC.Text;
+                    }
+                    else if (item.Text == "radioButton4")
+                    {
+                        answer += txtD.Text;
+                    }
                 }
             }
             add1(txtTitle.Text,txtQuestion.Text, txtA.Text, txtB.Text, txtC.Text, txtD.Text, answer);
@@ -243,7 +258,7 @@ namespace LoginForm
 
             using (SqlConnection con = new SqlConnection(conString))
             {
-                using(SqlCommand cmd = new SqlCommand("SELECT [Title],Count(Question) as 'Number of questions' FROM [Quiz] GROUP BY Title", con))
+                using(SqlCommand cmd = new SqlCommand("SELECT [Title],Count(Question) as 'Number of questions',(SELECT Count(Title) FROM QuizAnswer WHERE Quiz.Title=QuizAnswer.Title ) as 'Number of operations' FROM [Quiz] GROUP BY Title", con))
                 {
                     con.Open();
 

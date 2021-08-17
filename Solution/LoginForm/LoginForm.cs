@@ -70,9 +70,16 @@ namespace LoginForm
             }
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxShowPassword.Checked)
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }
         }
     }
 }

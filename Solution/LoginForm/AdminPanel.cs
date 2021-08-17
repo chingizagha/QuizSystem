@@ -13,6 +13,7 @@ namespace LoginForm
 {
     public partial class AdminPanel : Form
     {
+        int IDQuiz = 0;
         int ID = 0;
         int IDTeacher = 0;
 
@@ -30,6 +31,8 @@ namespace LoginForm
         {
             dataGridView1.DataSource = GetDataList();
             dataGridView2.DataSource = GetDataListTeacher();
+            dataGridView3.DataSource = GetDataListQuiz();
+
             textBox3.Text = LoginForm.passingText;
             string sql = "select * from [User] where Email ='" + textBox3.Text + "' ";
             SqlCommand cmd = new SqlCommand(sql, con);
@@ -91,6 +94,7 @@ namespace LoginForm
             panel2.Visible = false;
             panel3.Visible = false;
             panel4.Visible = false;
+            panel5.Visible = false;
         }
 
         private void btnPersonal_Click(object sender, EventArgs e)
@@ -114,7 +118,7 @@ namespace LoginForm
         private void btnQuiz_Click(object sender, EventArgs e)
         {
             hidePanels();
-            //panel2.Visible = true;
+            panel5.Visible = true;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -279,6 +283,120 @@ namespace LoginForm
             else
             {
                 MessageBox.Show("Please Select Record to Delete");
+            }
+        }
+
+        //===================================================
+
+        private DataTable GetDataListQuiz()
+        {
+            DataTable dtQuiz = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT ID,Title,Question,A,B,C,D,CorrectAnswer FROM [Quiz]", con))
+                {
+                    con.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    dtQuiz.Load(reader);
+                }
+            }
+            return dtQuiz;
+        }
+
+        private void ClearDataQuiz()
+        {
+            txtTitle.Text = "";
+            txtQuestion.Text = "";
+            txtA.Text = "";
+            txtB.Text = "";
+            txtC.Text = "";
+            txtD.Text = "";
+            txtCorrectAnswer.Text = "";
+            IDQuiz = 0;
+        }
+
+        private void dataGridView3_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            IDQuiz = Convert.ToInt32(dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtTitle.Text = dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtQuestion.Text = dataGridView3.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtA.Text = dataGridView3.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtB.Text = dataGridView3.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtC.Text = dataGridView3.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtD.Text = dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtCorrectAnswer.Text = dataGridView3.Rows[e.RowIndex].Cells[7].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtTitle.Text != "" && txtQuestion.Text != "" && txtA.Text != "" && txtB.Text != "" && txtC.Text != "" && txtD.Text != "" && txtCorrectAnswer.Text != "")
+            {
+                cmd = new SqlCommand("UPDATE [Quiz] set Title=@TITLE,Question=@QUESTION,A=@A,B=@B,C=@C,D=@D,CorrectAnswer=@CORRECTANSWER where ID=@IDQUIZ", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@IDQUIZ", IDQuiz);
+                cmd.Parameters.AddWithValue("@TITLE", txtTitle.Text);
+                cmd.Parameters.AddWithValue("@QUESTION", txtQuestion.Text);
+                cmd.Parameters.AddWithValue("@A", txtA.Text);
+                cmd.Parameters.AddWithValue("@B", txtB.Text);
+                cmd.Parameters.AddWithValue("@C", txtC.Text);
+                cmd.Parameters.AddWithValue("@D", txtD.Text);
+                cmd.Parameters.AddWithValue("@CORRECTANSWER", txtCorrectAnswer.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Record Updated Successfully");
+                con.Close();
+                dataGridView3.DataSource = GetDataListQuiz();
+                ClearDataQuiz();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (IDTeacher != 0)
+            {
+                cmd = new SqlCommand("DELETE [Quiz] WHERE ID=@IDQuiz", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@IDQuiz", IDQuiz);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Deleted Successfully!");
+                dataGridView3.DataSource = GetDataListQuiz();
+                ClearDataQuiz();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Delete");
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            if (txtTitle.Text != "" && txtQuestion.Text != "" && txtA.Text != "" && txtB.Text != "" && txtC.Text != "" && txtD.Text != "" && txtCorrectAnswer.Text != "")
+            {
+                cmd = new SqlCommand("INSERT INTO  [Quiz](Title,Question,A,B,C,D,CorrectAnswer) values(@TITLE,@QUESTION,@A,@B,@C,@D,@CORRECTANSWER)", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@TITLE", txtTitle.Text);
+                cmd.Parameters.AddWithValue("@QUESTION", txtQuestion.Text);
+                cmd.Parameters.AddWithValue("@A", txtA.Text);
+                cmd.Parameters.AddWithValue("@B", txtB.Text);
+                cmd.Parameters.AddWithValue("@C", txtC.Text);
+                cmd.Parameters.AddWithValue("@D", txtD.Text);
+                cmd.Parameters.AddWithValue("@CORRECTANSWER", txtCorrectAnswer.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Record Inserted Successfully");
+                dataGridView3.DataSource = GetDataListQuiz();
+                ClearData();
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Details!");
             }
         }
     }
